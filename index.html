@@ -72,16 +72,62 @@
             </div>
         </section>
         <!-- Paribahan Section -->
-        <section class="paribahan p-10 bg-zinc-400">
+        <section class="paribahan p-10 bg-[#F7F9F8]">
             <!-- text-box -->
-            <div class=" ">
-                <div>
-                    <span id="left-seats"></span><span>Seats left</span>
+            <div class="text-center mb-7">
+                <h2 class="text-2xl font-bold">Farwah Express</h2>
+                <p>Welcome to Farwah Express, It is a renowned company and top ranked bus service provider in Bangladesh, <br> We provide bus service in almost all domestic route as well as in international route.</p>
+            </div>
+            <!-- Information Box -->
+            <div class="lg:flex relative bg-white mb-20 pb-10">
+                <!--Right Information Box -->
+                <div class="lg:w-8/12 lg:p-6 p-4">
+                    <div class="flex justify-between mb-6">
+                        <div class="flex gap-4 items-center">
+                            <div>
+                                <img src="./images/bus-logo.png" alt="">
+                            </div>
+                            <div>
+                                <h1 class="font-bold text-2xl">Farwah Express</h1>
+                                <h4>Coach-Heno! AC_Business</h4>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <span><img src="./images/seat-green.png" alt=""></span><span id="left-seats">40</span><span>Seats left</span>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 rounded-2xl">
+                        <div class="flex justify-between p-4">
+                            <div>Route</div>
+                            <div>Dhaka-Sylhet</div>
+                        </div>
+                        <hr class="p-2">
+                        <div class="flex justify-between p-4">
+                            <div>Departure Time</div>
+                            <div>9:00</div>
+                        </div>
+                        <hr class="p-2">
+                        <div class="flex justify-between">
+                            <div class="p-4 rounded-xl bg-slate-300">Boarding Point - Laxmipur</div>
+                            <div class="p-4 rounded-xl bg-slate-300">Dropping Point - Bogura</div>
+                            <div class="p-4 rounded-xl bg-slate-300">Est. Time - 11Hour</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Divider -->
+                <img src="./images/info-devider.png" alt="" class="absolute right-[25%] h-full hidden lg:block">
+                <!--Left Information Box -->
+                <div class="w-4/12 flex items-center justify-center">
+                    <div>
+                        <img src="./images/fare.png" alt="">
+                        <h2 class="font-bold text-2xl">550 Taka</h2>
+                        <p>Per Seat</p>
+                    </div>
                 </div>
             </div>
             <!--ticket  -->
-            <div class="flex gap-4">
-                <div>
+            <div class="lg:flex gap-4">
+                <div class="lg:w-7/12">
                     <h2 >Select Your Seat</h2>
                     <hr>
                     <div>
@@ -97,7 +143,7 @@
                     </div>
                     <hr>
                     <!-- strianig icon -->
-                    <p><img src="./images/" alt="">strianig </p>
+                    <p><img src="./images/steering-wheel-removebg-preview.png" alt="" class="text-black"></p>
                     <div class="flex gap-2">
                         <div>
                             A
@@ -110,9 +156,22 @@
                         </div>
                         <div id="total"></div>
                     </div>
+                    <div class="flex gap-2">
+                        <div>
+                            B
+                        </div>
+                        <div class="flex gap-4">
+                            <button class="seat">B1</button>
+                            <button class="seat">B2</button>
+                            <button class="seat">B3</button>
+                            <button class="seat">B4</button>
+                        </div>
+                        <div id="total"></div>
+                    </div>
                 </div>
+                <hr class="">
                 <!-- Purchase History -->
-                <div class="">
+                <div class="lg:w-5/12">
                     <h2 >Select Your Seat</h2>
                     <hr>
                     <!--Display purchase History  -->
@@ -129,10 +188,11 @@
             let bookTicketNumber =0;
             let seatCollection =[];
             for(let i = 0; i < seats.length; i++){
-                seats[i].addEventListener('click', function(e){
+                seats[i].addEventListener('click', function(){
                     const seatNumber = seats[i].innerText;
                     if(seatCollection.includes(seatNumber)=== false){
                         seatCollection.push(seatNumber)
+                       if(seatCollection.length<=4){
                         bookTicketNumber++
                         LeftSeats--
                         price+=550;
@@ -141,15 +201,7 @@
                         seats[i].style='color:red; background:blue';
                         document.getElementById('total').innerText = price;
                     }
-                    // else{
-                    //     seatCollection.pop(seatNumber)
-                    //     bookTicketNumber--;
-                    //     LeftSeats++;
-                    //     price-=550;
-                    //     console.log(LeftSeats);
-                    //     seats[i].style='color:;';
-                    // }
-                    // document.getElementById('total').innerText = price;
+                }
                 })
             }
         </script>
