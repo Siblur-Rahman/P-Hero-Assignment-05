@@ -4,8 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farwah Express</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Assignment-05</h1>
+<body style="padding: 100px;">
+        <header class="flex justify-between p-6">
+            <div id="logo" class="p-2">
+                F-Ticket
+            </div>
+            <div id="nemu" class="p-2 flex justify-evenly w-8/12 text-center">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Destination</a>
+            </div>
+            <div id="icon" class="flex gap-2 p-2">
+                <span>Bus</span>
+                <img src="./images/bus-icon.png" alt="">
+            </div>
+        </header>
+        <!-- banner Section -->
+        <section class="banner h-[550px] bg-[url('./images/banner.png')] bg-no-repeat bg-contain rounded-3xl">
+            
+        </section>
+
+        <!-- Offer Section -->
+        <section class="offer-section mt-16 p-6">
+            <h2 class="text-center text-xl font-bold">Best offers for you</h2>
+
+            <div class="grid grid-cols-2 gap-4 mt-6">
+                <!-- Left Coupon Box -->
+                <div class="coupon-box bg-[#FFBF0F] flex relative rounded-xl">
+                    <div class="w-8/12 p-5 flex items-center">
+                        <div>
+                            <h2 class="text-2xl font-bold">15% OFF</h2>
+                            <h3 class="text-xl font-semibold">on your next purchase</h3>
+                            <h4>use by February 2024</h4>
+                        </div>
+                    </div>
+                    <img src="./images/cupon-devider.png" alt="" class="absolute right-1/3 h-full">
+                    <div class="w-4/12 p-5 flex items-center">
+                        <div>
+                            <h2 class="text-2xl font-bold">NEW15</h2>
+                            <h3>Coupon Code</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Coupon Box -->
+                <div class="coupon-box bg-[#F48B9C] flex relative rounded-xl">
+                    <div class="w-8/12 p-10 flex items-center">
+                        <div>
+                            <h2 class="text-2xl font-bold">20% OFF</h2>
+                            <h3 class="text-xl font-semibold">on your next purchase</h3>
+                            <h4>use by February 2024</h4>
+                        </div>
+                    </div>
+                    <img src="./images/cupon-devider.png" alt="" class="absolute right-1/3 h-full">
+                    <div class="w-4/12 p-5 flex items-center">
+                            <div>
+                                <h2 class="text-2xl font-bold">Couple 20</h2>
+                                <h3>Coupon Code</h3>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center mt-6">
+            <button class="btn btn-outline btn-success">See All Offers</button>
+            </div>
+        </section>
+        <!-- Paribahan Section -->
+        <section class="paribahan p-10 bg-zinc-400">
+            <!-- text-box -->
+            <div class=" ">
+                <div>
+                    <span id="left-seats"></span><span>Seats left</span>
+                </div>
+            </div>
+            <!--ticket  -->
+            <div class="flex gap-4">
+                <div>
+                    <h2 >Select Your Seat</h2>
+                    <hr>
+                    <div>
+                    <!--Seat Available Area -->
+                        <div>
+                            <span><img src="./images/seat-gray.png" alt=""></span><span>Available</span>
+                        </div>
+                        <div>
+                            <span><img src="./images/seat-green.png" alt=""></span><span>Selected</span>
+                        </div>
+                    
+                    <!--Seat Selected Area -->
+                    </div>
+                    <hr>
+                    <!-- strianig icon -->
+                    <p><img src="./images/" alt="">strianig </p>
+                    <div class="flex gap-2">
+                        <div>
+                            A
+                        </div>
+                        <div class="flex gap-4">
+                            <button class="seat">A1</button>
+                            <button class="seat">A2</button>
+                            <button class="seat">A3</button>
+                            <button class="seat">A4</button>
+                        </div>
+                        <div id="total"></div>
+                    </div>
+                </div>
+                <!-- Purchase History -->
+                <div class="">
+                    <h2 >Select Your Seat</h2>
+                    <hr>
+                    <!--Display purchase History  -->
+                    Seat
+                </div>
+            </div>
+
+        </section>
+        <script>
+            let LeftSeats = 40;
+            let price =0;
+            // const LeftSeats = document.querySelectorAll('#left-seats').innerText;
+            const seats = document.querySelectorAll('.seat');
+            let bookTicketNumber =0;
+            let seatCollection =[];
+            for(let i = 0; i < seats.length; i++){
+                seats[i].addEventListener('click', function(e){
+                    const seatNumber = seats[i].innerText;
+                    if(seatCollection.includes(seatNumber)=== false){
+                        seatCollection.push(seatNumber)
+                        bookTicketNumber++
+                        LeftSeats--
+                        price+=550;
+                        console.log(LeftSeats);
+                        seats[i].style.color='red';
+                        seats[i].style='color:red; background:blue';
+                        document.getElementById('total').innerText = price;
+                    }
+                    // else{
+                    //     seatCollection.pop(seatNumber)
+                    //     bookTicketNumber--;
+                    //     LeftSeats++;
+                    //     price-=550;
+                    //     console.log(LeftSeats);
+                    //     seats[i].style='color:;';
+                    // }
+                    // document.getElementById('total').innerText = price;
+                })
+            }
+        </script>
+            
+    <script src="https://kit.fontawesome.com/09ff4c6b49.js" crossorigin="anonymous"></script>
 </body>
 </html>
