@@ -6,6 +6,26 @@
     <title>Farwah Express</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .seat{
+            display: inline-block;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            background: #f2efef;
+            font-weight: 600;
+            width: 100px;
+            height: 50px;
+        }
+        .seat-heading{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 12px;
+            /* background: #d00b0b; */
+        }
+    </style>
 </head>
 <body style="padding: 100px;">
         <header class="flex justify-between p-6">
@@ -92,8 +112,8 @@
                                 <h4>Coach-Heno! AC_Business</h4>
                             </div>
                         </div>
-                        <div class="flex items-center gap-1">
-                            <span><img src="./images/seat-green.png" alt=""></span><span id="left-seats">40</span><span>Seats left</span>
+                        <div class="flex items-center gap-1 text-green-600 bg-green-200 rounded-xl p-4">
+                            <span><img src="./images/seat-green.png" alt=""></span><span id="left-seats">12</span><span>Seats left</span>
                         </div>
                     </div>
                     <div class="bg-slate-50 rounded-2xl">
@@ -118,7 +138,7 @@
                 <img src="./images/info-devider.png" alt="" class="absolute right-[25%] h-full hidden lg:block">
                 <!--Left Information Box -->
                 <div class="w-4/12 flex items-center justify-center">
-                    <div>
+                    <div class="text-center">
                         <img src="./images/fare.png" alt="">
                         <h2 class="font-bold text-2xl">550 Taka</h2>
                         <p>Per Seat</p>
@@ -130,12 +150,12 @@
                 <div class="lg:w-7/12">
                     <h2 >Select Your Seat</h2>
                     <hr>
-                    <div>
+                    <div class="flex justify-between p-4">
                     <!--Seat Available Area -->
-                        <div>
+                        <div class="flex gap-2 text-green-600">
                             <span><img src="./images/seat-gray.png" alt=""></span><span>Available</span>
                         </div>
-                        <div>
+                        <div class="flex gap-2 text-green-600">
                             <span><img src="./images/seat-green.png" alt=""></span><span>Selected</span>
                         </div>
                     
@@ -143,63 +163,187 @@
                     </div>
                     <hr>
                     <!-- strianig icon -->
-                    <p><img src="./images/steering-wheel-removebg-preview.png" alt="" class="text-black"></p>
-                    <div class="flex gap-2">
-                        <div>
-                            A
+                    <p><img src="./images/steering-wheel-removebg-preview.png" alt="" class="text-black float-end"></p>
+                    <!-- A-block -->
+                        <div class="flex justify-between w-full p-4">
+                            <div class="flex gap-4">
+                                <span class="flex justify-center items-center">A</span>
+                                <button class="seat">A1</button>
+                                <button class="seat">A2</button>
+                            </div>
+                            <div>
+                                <button class="seat">A3</button>
+                                <button class="seat">A4</button>
+                            </div>
                         </div>
-                        <div class="flex gap-4">
-                            <button class="seat">A1</button>
-                            <button class="seat">A2</button>
-                            <button class="seat">A3</button>
-                            <button class="seat">A4</button>
+                        <!-- b-block -->
+                        <div class="flex justify-between w-full p-4">
+                            <div class="flex gap-4">
+                                <span class="flex justify-center items-center">B</span>
+                                <button class="seat">B1</button>
+                                <button class="seat">B2</button>
+                            </div>
+                            <div>
+                                <button class="seat">B3</button>
+                                <button class="seat">B4</button>
+                            </div>
                         </div>
-                        <div id="total"></div>
-                    </div>
-                    <div class="flex gap-2">
-                        <div>
-                            B
+                        <!-- c-block -->
+                        <div class="flex justify-between w-full p-4">
+                            <div class="flex gap-4">
+                                <span class="flex justify-center items-center">C</span>
+                                <button class="seat">C1</button>
+                                <button class="seat">C2</button>
+                            </div>
+                            <div>
+                                <button class="seat">C3</button>
+                                <button class="seat">C4</button>
+                            </div>
                         </div>
-                        <div class="flex gap-4">
-                            <button class="seat">B1</button>
-                            <button class="seat">B2</button>
-                            <button class="seat">B3</button>
-                            <button class="seat">B4</button>
-                        </div>
-                        <div id="total"></div>
-                    </div>
+                        <!-- d-block -->
+                        <!-- <div class="flex justify-between w-full p-4">
+                            <div class="flex gap-4">
+                                <span class="flex justify-center items-center">D</span>
+                                <button class="seat">D1</button>
+                                <button class="seat">D2</button>
+                            </div>
+                            <div>
+                                <button class="seat">D3</button>
+                                <button class="seat">D4</button>
+                            </div>
+                        </div> -->
+                        <!-- -block -->
+                        <!-- <div class="flex justify-between w-full p-4">
+                            <div class="flex gap-4">
+                                <span class="flex justify-center items-center">E</span>
+                                <button class="seat">E1</button>
+                                <button class="seat">E2</button>
+                            </div>
+                            <div>
+                                <button class="seat">E3</button>
+                                <button class="seat">E4</button>
+                            </div>
+                        </div> -->
+                        <!-- e-block -->
+                        <!-- f-block -->
+                        <!-- g-block -->
+                        <!-- h-block -->
+                        <!-- i-block -->
+                        <!-- j-block -->
                 </div>
                 <hr class="">
+                <div class="border-2 h-96 border-dashed">
+
+                </div>
                 <!-- Purchase History -->
                 <div class="lg:w-5/12">
                     <h2 >Select Your Seat</h2>
                     <hr>
                     <!--Display purchase History  -->
-                    Seat
+                    <div class="flex justify-between p-4">
+                        <p>Seat<span id="booking-seats" class="bg-green-600 text-green-600 text-white pl-2 pr-2 ml-2">0</span></p>
+                        <p>Class</p>
+                        <p>Price</p>
+                    </div>
+                    <hr>
+                    <div id="add">
+
+                    </div>
+                    <hr>
+                    <!-- Total price -->
+                    <div class="flex justify-between p-4">
+                        <p>Total Price</p>
+                        <p>BDT <span id="total">00</span></p>
+                    </div>
+                    <!--grand Total price -->
+                    <div class="flex justify-between p-4">
+                        <p>Grand Total Price</p>
+                        <p>BDT <span id="grand-total">00</span></p>
+                    </div>
+                    <!--Coupon apply -->
+                    <div class="flex justify-between p-4" id="coupon-apply-div">
+                        <input type="text" id="coupon-input" class="p-2 rounded-lg border-2">
+                        <button id="coupon-apply" class="btn btn-success text-white" disabled>Apply</button>
+                    </div>
+                   <!-- next Button -->
+                    <label for="my_modal_6" class="btn btn-success bg-green-600 w-full rounded-3xl text-white text-2xl font-semibold">Next</label>
+
+                    <!-- Modal -->
+                    <input type="checkbox" id="my_modal_6" class="modal-toggle" />
+                    <div class="modal" role="dialog">
+                    <div class="modal-box">
+                        <div class="flex justify-center">
+                            <img src="./images/success.png" alt="" class="text-center">
+                        </div>
+                        <h2 class="font-bold text-lg text-green-600 text-center">success</h2>
+                        <h2 class="font-medium text-base text-center">
+                            Thank you for Booking Our Bus Seats. <br>
+                            We are working hard to find the best service and deals for you.
+                        </h2>
+                        <p class="text-center"> 
+                            Shortly you will find a confirmation in your email.</p>
+                        <div class="modal-action flex justify-center">
+                        <label for="my_modal_6" class="btn btn-success bg-green-600 rounded-3xl pl-10 pr-10">Continue</label>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- modal end -->
                 </div>
             </div>
 
         </section>
         <script>
-            let LeftSeats = 40;
+            let LeftSeats = 12;
             let price =0;
             // const LeftSeats = document.querySelectorAll('#left-seats').innerText;
             const seats = document.querySelectorAll('.seat');
-            let bookTicketNumber =0;
+            let bookingSeats =0;
             let seatCollection =[];
             for(let i = 0; i < seats.length; i++){
-                seats[i].addEventListener('click', function(){
-                    const seatNumber = seats[i].innerText;
+                let seat =seats[i];
+                seat.addEventListener('click', function(){
+                    const seatNumber = seat.innerText;
                     if(seatCollection.includes(seatNumber)=== false){
                         seatCollection.push(seatNumber)
                        if(seatCollection.length<=4){
-                        bookTicketNumber++
+                        bookingSeats++
                         LeftSeats--
                         price+=550;
                         console.log(LeftSeats);
-                        seats[i].style.color='red';
-                        seats[i].style='color:red; background:blue';
+                        seat.style='color:red; background:green';
+                        document.getElementById('left-seats').innerText = LeftSeats;
+                        document.getElementById('booking-seats').innerText = bookingSeats;
                         document.getElementById('total').innerText = price;
+                        // grand total
+                        let grandTotal = price;
+                        const grandTotalElement  = document.getElementById('grand-total');
+                        grandTotalElement.innerText = grandTotal;
+                        // coupon apply
+                        const applyBtn = document.getElementById('coupon-apply');
+                        const apply_Div =document.getElementById('coupon-apply-div'); 
+                        if(seatCollection.length==4){
+                            applyBtn.removeAttribute('disabled')
+                        }
+                        applyBtn.addEventListener('click', function(){
+                            const couponValue =document.getElementById('coupon-input').value;
+                            if(couponValue==='NEW15'){
+                                const newOffer = grandTotal - grandTotal*.15;
+                                grandTotalElement.innerText = newOffer;
+                                apply_Div.classList.add('hidden');
+                            }else if(couponValue==='Couple 20'){
+                                apply_Div.classList.add('hidden');
+                                const newOffer = grandTotal - grandTotal*.20;
+                                grandTotalElement.innerText = newOffer;
+                            }
+                        })
+                        // Create Element
+                        let span = document.createElement('span');
+                        span.innerHTML =`<div class="flex justify-between pl-4 pr-4">
+                            <p>${seatNumber}</p>
+                            <p>Economy</p>
+                            <p>550</p>
+                        </div>`
+                        document.getElementById('add').appendChild(span)
                     }
                 }
                 })
